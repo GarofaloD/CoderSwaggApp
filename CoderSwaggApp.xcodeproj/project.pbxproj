@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		8CF0C9B62145C80C0052F34C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0C9B52145C80C0052F34C /* AppDelegate.swift */; };
-		8CF0C9B82145C80C0052F34C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0C9B72145C80C0052F34C /* ViewController.swift */; };
+		8CF0C9B82145C80C0052F34C /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0C9B72145C80C0052F34C /* CategoriesViewController.swift */; };
 		8CF0C9BB2145C80C0052F34C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF0C9B92145C80C0052F34C /* Main.storyboard */; };
 		8CF0C9BD2145C80D0052F34C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF0C9BC2145C80D0052F34C /* Assets.xcassets */; };
 		8CF0C9C02145C80D0052F34C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF0C9BE2145C80D0052F34C /* LaunchScreen.storyboard */; };
 		8CF0C9CB2145C80D0052F34C /* CoderSwaggAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0C9CA2145C80D0052F34C /* CoderSwaggAppTests.swift */; };
+		8CF0C9D92149C9010052F34C /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0C9D82149C9010052F34C /* CategoryTableViewCell.swift */; };
+		8CF0C9DB2149CB7F0052F34C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0C9DA2149CB7F0052F34C /* Category.swift */; };
+		8CF0C9DE2149CD9A0052F34C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0C9DD2149CD9A0052F34C /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +31,7 @@
 /* Begin PBXFileReference section */
 		8CF0C9B22145C80C0052F34C /* CoderSwaggApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoderSwaggApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF0C9B52145C80C0052F34C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8CF0C9B72145C80C0052F34C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8CF0C9B72145C80C0052F34C /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		8CF0C9BA2145C80C0052F34C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8CF0C9BC2145C80D0052F34C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CF0C9BF2145C80D0052F34C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +39,9 @@
 		8CF0C9C62145C80D0052F34C /* CoderSwaggAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoderSwaggAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF0C9CA2145C80D0052F34C /* CoderSwaggAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoderSwaggAppTests.swift; sourceTree = "<group>"; };
 		8CF0C9CC2145C80D0052F34C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CF0C9D82149C9010052F34C /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		8CF0C9DA2149CB7F0052F34C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		8CF0C9DD2149CD9A0052F34C /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +83,11 @@
 		8CF0C9B42145C80C0052F34C /* CoderSwaggApp */ = {
 			isa = PBXGroup;
 			children = (
+				8CF0C9DC2149CD8B0052F34C /* Services */,
+				8CF0C9D72149C8970052F34C /* Model */,
+				8CF0C9D62149C88F0052F34C /* Views */,
+				8CF0C9D52149C8840052F34C /* Controller */,
 				8CF0C9B52145C80C0052F34C /* AppDelegate.swift */,
-				8CF0C9B72145C80C0052F34C /* ViewController.swift */,
 				8CF0C9B92145C80C0052F34C /* Main.storyboard */,
 				8CF0C9BC2145C80D0052F34C /* Assets.xcassets */,
 				8CF0C9BE2145C80D0052F34C /* LaunchScreen.storyboard */,
@@ -94,6 +103,38 @@
 				8CF0C9CC2145C80D0052F34C /* Info.plist */,
 			);
 			path = CoderSwaggAppTests;
+			sourceTree = "<group>";
+		};
+		8CF0C9D52149C8840052F34C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8CF0C9B72145C80C0052F34C /* CategoriesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8CF0C9D62149C88F0052F34C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CF0C9D82149C9010052F34C /* CategoryTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8CF0C9D72149C8970052F34C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8CF0C9DA2149CB7F0052F34C /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8CF0C9DC2149CD8B0052F34C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8CF0C9DD2149CD9A0052F34C /* DataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +238,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CF0C9B82145C80C0052F34C /* ViewController.swift in Sources */,
+				8CF0C9B82145C80C0052F34C /* CategoriesViewController.swift in Sources */,
 				8CF0C9B62145C80C0052F34C /* AppDelegate.swift in Sources */,
+				8CF0C9D92149C9010052F34C /* CategoryTableViewCell.swift in Sources */,
+				8CF0C9DB2149CB7F0052F34C /* Category.swift in Sources */,
+				8CF0C9DE2149CD9A0052F34C /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
