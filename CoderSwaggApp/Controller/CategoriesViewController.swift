@@ -30,7 +30,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as? CategoryTableViewCell{
             let category = DataService.instance.getCategories()[indexPath.row]
-            cell.updateviews(category: category)
+            cell.updateViews(category: category)
             return cell
             
         } else {
