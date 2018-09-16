@@ -30,18 +30,38 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as? CategoryTableViewCell{
             let category = DataService.instance.getCategories()[indexPath.row]
-            cell.updateViews(category: category)
+            cell.updateCategoryViews(category: category)
             return cell
             
         } else {
             return CategoryTableViewCell()
         }
-        
-        
-
     }
     
+    //Select the row
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //ring the categories by index
+        let category = DataService.instance.getCategories()[indexPath.row]
+        //perform the segue based on the identifier and the category that we are passing
+        performSegue(withIdentifier: "getProductViewController", sender: category)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Checking on the existance of the Vc that controls the products vc
+        if let productsVC = segue.destination as? ProductsViewController {
+           
+            //Modifying the back button
+            let barBtn = UIBarButtonItem()
+            barBtn.title = ""
+            navigationItem.backBarButtonItem = barBtn
+            
+            //If the model with the category exists pass the category and initialize the next vc with data coming from the dataservice 
+            assert(sender as? Category != nil)
+            productsVC.initializeProducts(category: sender as! Category)
+            
+          
+        }
+    }
     
     
     
